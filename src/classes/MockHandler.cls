@@ -1,13 +1,13 @@
 /**
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┐
-* Lead trigger.
+* MockHandler class.
 *
+* Used to contain mock REST API responses.
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @author         Ronan Williams   <ronanw@phixtechnologies.com>
-* @modifiedBy     Ronan Williams   <ronanw@phixtechnologies.com>
 * @maintainedBy   Ronan Williams   <ronanw@phixtechnologies.com>
 * @version        1.0
-* @created        4-2-2020
+* @created        03/01/2020
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @changes
 * vX.X            Ronan Williams
@@ -16,15 +16,6 @@
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 
-trigger LeadTrigger on Lead (after insert, after update) {
+public with sharing class MockHandler {
 
-    if (Trigger.isInsert){
-
-        LeadTriggerHandler.handleAfterInsert();
-    }
-
-    if (Trigger.isUpdate){
-
-
-    }
 }

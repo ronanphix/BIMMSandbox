@@ -1,8 +1,130 @@
 /**
- * Created by ronanwilliams on 2019-10-18.
- */
+* ─────────────────────────────────────────────────────────────────────────────────────────────────┐
+* DotMailerSync class.
+*
+* Additional information about this page or component should be added here, if available. Add a
+* single line break between the summary and the additional info.  Use as many lines as necessary.
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+* @author         Ronan Williams   <ronanw@phixtechnologies.com>
+* @maintainedBy   Ronan Williams   <ronanw@phixtechnologies.com>
+* @version        1.0
+* @created        03/01/2020
+* ──────────────────────────────────────────────────────────────────────────────────────────────────
+* @changes
+* vX.X            Ronan Williams
+* YYYY-MM-DD      TBC.
+*
+* ─────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 
 public class DotMailerSync {
+
+    /**
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┐
+    * One or two sentence description of this Outer Method.
+    * ────────────────────────────────────────────────────────────────────────────────────────────────
+    * @param    leadIds    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
+    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
+    * @return   TYPE    DESCRIPTION (MENTION LIKELY VALUES IN DESCRIPTION)
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┘
+    */
+    @Future(Callout=true)
+    public static void postLeads(Set<Id> leadIds){
+
+        // query for all leads passed to the future method
+        List<Lead> leads = [SELECT Id, Email, FirstName, LastName, Name, PostalCode, Salutation, DotDigitalId__c
+                            FROM Lead
+                            WHERE Id IN :leadIds];
+
+
+        for (Lead lead : leads){
+
+            HttpRequest req     = buildRequest(lead);
+            HttpResponse res    = new Http().send(req);
+
+            if (res.getStatusCode() == 200){
+                Map<String,Object> resObjectMap = (Map<String,Object>)JSON.deserializeUntyped(res.getBody());
+                lead.DotDigitalId__c = String.valueOf((Integer)resObjectMap.get('id'));
+                system.debug(resObjectMap.keySet());
+                system.debug(resObjectMap.values());
+
+
+            } else {
+                lead.DotDigitalId__c = 'ERROR';
+            }
+        }
+
+        update leads;
+
+    }
+
+
+    public static HttpRequest buildRequest(Lead lead){
+
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/853530/contacts');
+        request.setMethod('POST');
+        request.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(Label.DotDigitalAPIUser)) );
+        request.setHeader('Accept', 'application/json');
+        request.setHeader('Content-Type', 'application/json;charset=UTF-8');
+        request.setBody('{' +
+                    '"email":"' + lead.Email + '",' +
+                    '"optInType":"Single",' +
+                    '"emailType":"Html",' +
+                    '"dataFields":[' +
+                    '   { key: "FIRSTNAME", value: "' + lead.FirstName + '" },' +
+                    '   { key: "LASTNAME", value: "' + lead.LastName + '" },' +
+                    '   { key: "FULLNAME", value: "' + lead.Name + '" },' +
+                    '   { key: "POSTCODE", value: "' + (lead.PostalCode != null ? lead.PostalCode : '') + '" },' +
+                    '           ]' +
+                '}'
+        );
+
+        return request;
+    }
+
+
+
+
+    /**
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┐
+    * One or two sentence description of this Outer Method.
+    * ────────────────────────────────────────────────────────────────────────────────────────────────
+    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
+    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
+    * @return   TYPE    DESCRIPTION (MENTION LIKELY VALUES IN DESCRIPTION)
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┘
+    */
+
+    public static void postRandomContact2(){
+
+
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+//        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/739166/contacts');
+        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/853530/contacts');
+        request.setMethod('POST');
+//
+//        String credentials = 'apiuser-0454fcda797c@apiconnector.com:4984gfFk';
+        String credentials = 'apiuser-8d9f284f212e@apiconnector.com:4984gfFk';
+
+        request.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(credentials)) );
+
+        request.setHeader('Accept', 'application/json');
+        request.setHeader('Content-Type', 'application/json;charset=UTF-8');
+//        request.setBody('{"email":"dddjohn.smith@emailsim.io"}');
+request.setBody('"{ ""email"": ""john.smith@emailsim.io"", ""optInType"": ""Single"", ""emailType"": ""Html"", ""dataFields"": [ { key: ""FIRSTNAME"", value: ""John"" }, { key: ""FULLNAME"", value: ""John Smith"" }, { key: ""GENDER"", value: ""Male"" }, { key: ""LASTNAME"", value: ""Smith"" }, { key: ""POSTCODE"", value: ""N5 1DP"" } ] }"');
+
+        HttpResponse response = new Http().send(request);
+// If the request is successful, parse the JSON response.
+
+        system.debug(response.getStatusCode() + ' ' + response.getBody());
+
+        if (response.getStatusCode() == 200) {
+
+        }
+
+    }
 
 
     // get all existing address books

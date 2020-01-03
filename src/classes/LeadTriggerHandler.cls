@@ -29,11 +29,28 @@ public with sharing class LeadTriggerHandler {
     * @return   TYPE    DESCRIPTION (MENTION LIKELY VALUES IN DESCRIPTION)
     * ───────────────────────────────────────────────────────────────────────────────────────────────┘
     */
-    public static void handle(){
+    public static void handleAfterInsert(){
+        if (Trigger.new.size() < 100){
+            DotMailerSync.postLeads(Trigger.newMap.keySet());
+        }
+    }
+
+
+    /**
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┐
+    * One or two sentence description of this Outer Method.
+    * ────────────────────────────────────────────────────────────────────────────────────────────────
+    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
+    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
+    * @return   TYPE    DESCRIPTION (MENTION LIKELY VALUES IN DESCRIPTION)
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┘
+    */
+    public static void handleAfterUpdate(){
 
 
         system.debug(Trigger.new);
 
     }
+
 
 }
