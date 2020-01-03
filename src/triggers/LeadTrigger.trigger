@@ -18,13 +18,11 @@
 
 trigger LeadTrigger on Lead (after insert, after update) {
 
-    if (Trigger.isInsert){
-
+    if (Trigger.isAfter && Trigger.isInsert){
         LeadTriggerHandler.handleAfterInsert();
     }
 
-    if (Trigger.isUpdate){
-
-
+    if (Trigger.isAfter && Trigger.isUpdate){
+        LeadTriggerHandler.handleAfterUpdate();
     }
 }

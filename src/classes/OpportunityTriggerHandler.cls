@@ -1,8 +1,8 @@
 /**
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┐
-* LeadTriggerHandler class.
+* OpportunityTriggerHandler class.
 *
-* Used to execute contextual logic from the Lead trigger.
+* Used to execute contextual logic from the Opportunity trigger.
 * ──────────────────────────────────────────────────────────────────────────────────────────────────
 * @author         Ronan Williams   <ronanw@phixtechnologies.com>
 * @maintainedBy   Ronan Williams   <ronanw@phixtechnologies.com>
@@ -16,7 +16,7 @@
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 
-public with sharing class LeadTriggerHandler {
+public with sharing class OpportunityTriggerHandler {
 
     public static Boolean afterInsertRun = false;
     public static Boolean afterUpdateRun = false;
@@ -29,28 +29,28 @@ public with sharing class LeadTriggerHandler {
     */
     public static void handleAfterInsert(){
 
-        // lead ids split into two batches if there are more than 100 records in the trigger
+        // Opportunity ids split into two batches if there are more than 100 records in the trigger
         // to avoid callout limits
         if (!afterInsertRun && !System.isFuture()){
-            Set<Id> leadIdsBatchOne = new Set<Id>();
-            Set<Id> leadIdsBatchTwo = new Set<Id>();
+            Set<Id> oppIdsBatchOne = new Set<Id>();
+            Set<Id> oppIdsBatchTwo = new Set<Id>();
 
-            for (Object leadObj : Trigger.new){
-                Lead l = (Lead)leadObj;
-                if (l.Email != null){
-                    if (leadIdsBatchOne.size() < 100){
-                        leadIdsBatchOne.add(l.Id);
+            for (Object oppObj : Trigger.new){
+                Opportunity o = (Opportunity)oppObj;
+                if (o.Email2__c != null){
+                    if (oppIdsBatchOne.size() < 100){
+                        oppIdsBatchOne.add(o.Id);
                     } else {
-                        leadIdsBatchTwo.add(l.Id);
+                        oppIdsBatchTwo.add(o.Id);
                     }
                 }
             }
 
-            if (!leadIdsBatchOne.isEmpty()){
-                DotMailerSync.postLeads(leadIdsBatchOne);
+            if (!oppIdsBatchOne.isEmpty()){
+                DotMailerSync.postOpportunities(oppIdsBatchOne);
             }
-            if (!leadIdsBatchTwo.isEmpty()){
-                DotMailerSync.postLeads(leadIdsBatchTwo);
+            if (!oppIdsBatchTwo.isEmpty()){
+                DotMailerSync.postOpportunities(oppIdsBatchTwo);
             }
         }
 
@@ -66,28 +66,28 @@ public with sharing class LeadTriggerHandler {
     */
     public static void handleAfterUpdate(){
 
-        // lead ids split into two batches if there are more than 100 records in the trigger
+        // Opportunity ids split into two batches if there are more than 100 records in the trigger
         // to avoid callout limits
         if (!afterUpdateRun && !System.isFuture()){
-            Set<Id> leadIdsBatchOne = new Set<Id>();
-            Set<Id> leadIdsBatchTwo = new Set<Id>();
+            Set<Id> oppIdsBatchOne = new Set<Id>();
+            Set<Id> oppIdsBatchTwo = new Set<Id>();
 
-            for (Object leadObj : Trigger.new){
-                Lead l = (Lead)leadObj;
-                if (l.Email != null && l.DotDigitalId__c == null){
-                    if (leadIdsBatchOne.size() < 100){
-                        leadIdsBatchOne.add(l.Id);
+            for (Object oppObj : Trigger.new){
+                Opportunity o = (Opportunity)oppObj;
+                if (o.Email2__c != null){
+                    if (oppIdsBatchOne.size() < 100){
+                        oppIdsBatchOne.add(o.Id);
                     } else {
-                        leadIdsBatchTwo.add(l.Id);
+                        oppIdsBatchTwo.add(o.Id);
                     }
                 }
             }
 
-            if (!leadIdsBatchOne.isEmpty()){
-                DotMailerSync.postLeads(leadIdsBatchOne);
+            if (!oppIdsBatchOne.isEmpty()){
+                DotMailerSync.postOpportunities(oppIdsBatchOne);
             }
-            if (!leadIdsBatchTwo.isEmpty()){
-                DotMailerSync.postLeads(leadIdsBatchTwo);
+            if (!oppIdsBatchTwo.isEmpty()){
+                DotMailerSync.postOpportunities(oppIdsBatchTwo);
             }
         }
 

@@ -41,6 +41,10 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="EmailHandler" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="ForgotPasswordController" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -62,6 +66,10 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="MyProfilePageControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OpportunityTriggerHandler" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>

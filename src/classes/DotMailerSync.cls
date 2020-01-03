@@ -21,34 +21,38 @@ public class DotMailerSync {
 
     /**
     * ───────────────────────────────────────────────────────────────────────────────────────────────┐
-    * One or two sentence description of this Outer Method.
+    * Future method used to post a maximum of 100 leads to DotDigital at endpoint:
+    * https://r1-api.dotmailer.com/v2/address-books/853530/contacts.
     * ────────────────────────────────────────────────────────────────────────────────────────────────
-    * @param    leadIds    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
-    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
-    * @return   TYPE    DESCRIPTION (MENTION LIKELY VALUES IN DESCRIPTION)
+    * @param    leadIds    List of lead Ids to be queried and posted to DotDigital
+    * @return   void
     * ───────────────────────────────────────────────────────────────────────────────────────────────┘
     */
     @Future(Callout=true)
     public static void postLeads(Set<Id> leadIds){
 
         // query for all leads passed to the future method
-        List<Lead> leads = [SELECT Id, Email, FirstName, LastName, Name, PostalCode, Salutation, DotDigitalId__c
+        List<Lead> leads = [SELECT Id, Email, FirstName, LastName, Name, PostalCode, Salutation, DotDigitalId__c,
+                                    Contact_Outcome__c, Appointment_Status_c__c, Appointment_Start__c,
+                                    Appointment_Location__c, Appointment_Type__c,
+                                    Date_Time_Assessment_Booked__c, Preferred_Location__c,
+                                    Campus__c, Course__c, Course_Area__c, Level_of_Course__c, Date_of_Birth__c,
+                                    Enquiry_Type__c, CreatedBy.Name, Main_Address__c, PostCode__c,
+                                    Newsletter__c, Nationality__c, Phone, Account__c, LeadSource, UTM_Source__c,
+                                    UnitE_Student_Ref__c, Address, Enquiry_Date__c, Entry_Date__c
                             FROM Lead
                             WHERE Id IN :leadIds];
 
-
         for (Lead lead : leads){
 
+            // send request
             HttpRequest req     = buildRequest(lead);
-            HttpResponse res    = new Http().send(req);
+            HttpResponse res    = Test.isRunningTest() ? MockHandler.dotDigitalLeadPostMock() : new Http().send(req);
 
+            // assign the id returned, or 'error' IF THE
             if (res.getStatusCode() == 200){
                 Map<String,Object> resObjectMap = (Map<String,Object>)JSON.deserializeUntyped(res.getBody());
                 lead.DotDigitalId__c = String.valueOf((Integer)resObjectMap.get('id'));
-                system.debug(resObjectMap.keySet());
-                system.debug(resObjectMap.values());
-
-
             } else {
                 lead.DotDigitalId__c = 'ERROR';
             }
@@ -59,6 +63,14 @@ public class DotMailerSync {
     }
 
 
+    /**
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┐
+    * One or two sentence description of this Outer Method.
+    * ────────────────────────────────────────────────────────────────────────────────────────────────
+    * @param    lead           Lead record used to construct the HttpRequest body
+    * @return   HttpRequest    Request containing formatted endpoint, method and body
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┘
+    */
     public static HttpRequest buildRequest(Lead lead){
 
         HttpRequest request = new HttpRequest();
@@ -75,7 +87,33 @@ public class DotMailerSync {
                     '   { key: "FIRSTNAME", value: "' + lead.FirstName + '" },' +
                     '   { key: "LASTNAME", value: "' + lead.LastName + '" },' +
                     '   { key: "FULLNAME", value: "' + lead.Name + '" },' +
-                    '   { key: "POSTCODE", value: "' + (lead.PostalCode != null ? lead.PostalCode : '') + '" },' +
+                    '   { key: "POSTCODE", value: "' + lead.PostalCode + '" },' +
+                    '   { key: "PHONE", value: "' + lead.Phone + '" },' +
+                    '   { key: "SALUTATION", value: "' + lead.Salutation + '" },' +
+                    '   { key: "APPOINT_OUTCOME", value: "' + lead.Contact_Outcome__c + '" },' +
+                    '   { key: "APPOINT_START_DATE", value : "' + lead.Appointment_Start__c + '"},' +
+                    '   { key: "APPOINT_START_DAY", value : "' +
+                                                    (lead.Appointment_Start__c != null ?
+                                                    String.valueOf(lead.Appointment_Start__c.day()) : '') + '"},' +
+                    '   { key: "APPOINT_START_TIME", value : "' +
+                                                    (lead.Appointment_Start__c != null ?
+                                                    String.valueOf(Datetime.valueOf(lead.Appointment_Start__c).time()) : '') + '"},' +
+                    '   { key: "APPOINTMENT_LOCATION", value : "' + lead.Appointment_Location__c + '"},' +
+                    '   { key: "APPOINTMENT_TYPE", value : "' + lead.Appointment_Type__c + '"},' +
+                    '   { key: "ASSESS_DATE", value : "' + lead.Date_Time_Assessment_Booked__c + '"},' +
+                    '   { key: "ASSESS_LOCATION", value : "' + lead.Preferred_Location__c + '"},' +
+                    '   { key: "ASSESS_OUTCOME", value : "' + lead.Contact_Outcome__c + '"},' +
+                    '   { key: "ASSESS_TYPE", value : "' + lead.Enquiry_Type__c + '"},' +
+                    '   { key: "DATE_OF_BIRTH_2", value : "' + lead.Date_of_Birth__c + '"},' +
+                    '   { key: "ENQUIRY_DATE", value : "' + lead.Enquiry_Date__c + '"},' +
+                    '   { key: "ENQUIRY_STATUS", value : "' + lead.Enquiry_Type__c + '"},' +
+                    '   { key: "MAIN_ADDRESS", value : "' + lead.Address + '"},' +
+                    '   { key: "PREF_COURSE_AREA", value : "' + lead.Course_Area__c + '"},' +
+                    '   { key: "PREF_COURSE_LEVEL", value : "' + lead.Level_of_Course__c + '"},' +
+                    '   { key: "PREF_COURSE_LOCATION", value : "' + lead.Appointment_Location__c + '"},' +
+                    '   { key: "PREF_ENTRY_DATE", value : "' + lead.Entry_Date__c + '"},' +
+                    '   { key: "SF_LEADID", value : "' + lead.Id + '"},' +
+                    '   { key: "UNITE_STUDENT_REF", value : "' + lead.UnitE_Student_Ref__c + '"}' +
                     '           ]' +
                 '}'
         );
@@ -83,314 +121,97 @@ public class DotMailerSync {
         return request;
     }
 
+    /**
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┐
+    * Future method used to post a maximum of 100 opportunities to DotDigital at endpoint:
+    * https://r1-api.dotmailer.com/v2/address-books/853530/contacts.
+    * ────────────────────────────────────────────────────────────────────────────────────────────────
+    * @param    leadIds    List of opportunity Ids to be queried and posted to DotDigital
+    * @return   void
+    * ───────────────────────────────────────────────────────────────────────────────────────────────┘
+    */
+    @Future(Callout=true)
+    public static void postOpportunities(Set<Id> oppIds){
 
+        // query for all leads passed to the future method
+        List<Opportunity> opps = [SELECT Id, Application_Status__c, Appointment_Outcome__c, Email2__c,
+                                        Account.FirstName, Account.LastName, Account.Name, Account.ShippingPostalCode,
+                                        Account.Salutation, DotDigitalId__c, Application_Location__c,
+                                        Booking_Type__c, Application_Date__c, Reply_Status__c, AccountId,
+                                        Campus__c, Course__c, Course_Area__c, Level_of_Course__c, Account.Date_of_Birth__c,
+                                        CreatedBy.Name,Account.Nationality__c, Account.Phone, LeadSource, UTM_Source__c,
+                                        Account.UnitE_Student_Ref__c, Enquiry_Date__c, Entry_Date__c,
+                                        Application_Outcome__c, Account.PersonMailingAddress
+                                    FROM Opportunity
+                                    WHERE Id IN :oppIds];
+
+        for (Opportunity opp : opps){
+
+            // send request
+            HttpRequest req     = buildRequest(opp);
+            HttpResponse res    = Test.isRunningTest() ? MockHandler.dotDigitalOpportunityPostMock() : new Http().send(req);
+
+            system.debug(res.getBody());
+
+            // assign the id returned, or 'error' IF THE
+            if (res.getStatusCode() == 200){
+                Map<String,Object> resObjectMap = (Map<String,Object>)JSON.deserializeUntyped(res.getBody());
+                opp.DotDigitalId__c = String.valueOf((Integer)resObjectMap.get('id'));
+            } else {
+                opp.DotDigitalId__c = 'ERROR';
+            }
+        }
+
+        update opps;
+
+    }
 
 
     /**
     * ───────────────────────────────────────────────────────────────────────────────────────────────┐
     * One or two sentence description of this Outer Method.
     * ────────────────────────────────────────────────────────────────────────────────────────────────
-    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
-    * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
-    * @return   TYPE    DESCRIPTION (MENTION LIKELY VALUES IN DESCRIPTION)
+    * @param    lead           Opportunity record used to construct the HttpRequest body
+    * @return   HttpRequest    Request containing formatted endpoint, method and body
     * ───────────────────────────────────────────────────────────────────────────────────────────────┘
     */
+    public static HttpRequest buildRequest(Opportunity opp){
 
-    public static void postRandomContact2(){
-
-
-        Http http = new Http();
         HttpRequest request = new HttpRequest();
-//        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/739166/contacts');
         request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/853530/contacts');
         request.setMethod('POST');
-//
-//        String credentials = 'apiuser-0454fcda797c@apiconnector.com:4984gfFk';
-        String credentials = 'apiuser-8d9f284f212e@apiconnector.com:4984gfFk';
-
-        request.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(credentials)) );
-
+        request.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(Label.DotDigitalAPIUser)) );
         request.setHeader('Accept', 'application/json');
         request.setHeader('Content-Type', 'application/json;charset=UTF-8');
-//        request.setBody('{"email":"dddjohn.smith@emailsim.io"}');
-request.setBody('"{ ""email"": ""john.smith@emailsim.io"", ""optInType"": ""Single"", ""emailType"": ""Html"", ""dataFields"": [ { key: ""FIRSTNAME"", value: ""John"" }, { key: ""FULLNAME"", value: ""John Smith"" }, { key: ""GENDER"", value: ""Male"" }, { key: ""LASTNAME"", value: ""Smith"" }, { key: ""POSTCODE"", value: ""N5 1DP"" } ] }"');
-
-        HttpResponse response = new Http().send(request);
-// If the request is successful, parse the JSON response.
-
-        system.debug(response.getStatusCode() + ' ' + response.getBody());
-
-        if (response.getStatusCode() == 200) {
-
-        }
-
-    }
-
-
-    // get all existing address books
-    //"/v2/address-books"
-    // link to generate doc
-    // https://salesforcekings.blogspot.com/2016/10/how-to-create-or-generate-csv-file-in.html
-
-    public static void getData(){
-
-
-        Map<String,Map<String,String>> recordMap = new  Map<String,Map<String,String>>();
-
-        List<Lead> enquiries = [SELECT Id, Email FROM Lead WHERE CreatedDate > :Date.today().addMonths(-5)];
-
-        for (Lead enquiry : enquiries){
-            if(!recordMap.containsKey(enquiry.Email)){
-                recordMap.put(enquiry.Email,getFieldMap());
-            }
-        }
-
-    }
-
-
-    private static void generateCSVDoc(){
-
-        String csvColumnHeader = ''; //
-
-        for (String key : getFieldMap().keySet()){
-            csvColumnHeader += key + ',';
-        }
-
-        csvColumnHeader += '\n';
-
-        // String.valueOf(getFieldMap().keySet());
-        List<String> csvRowValues = new List<String>();
-
-        String documentName = 'SetupAuditTrailLog-'+ Datetime.now().format('MMM') + Datetime.now().year();
-        csvColumnHeader = 'Date, User, Action, Section, Delegate User\n';
-        String csvFile = csvColumnHeader + String.join(csvRowValues,'\n');
-
-        // Insert the generated CSV file in Document object under "Setup Audit Trail Logs".
-        Document doc = new Document(
-                Name = documentName,
-                Body = Blob.valueOf(csvFile),
-                Type = 'csv',
-                ContentType='application/vnd.ms-excel');
-
-        system.debug(doc);
-
-    }
-
-
-    public static Map<String,String> getFieldMap(){
-
-        return new Map<String,String>{
-                'Email' => null,
-                'App_Status' => null,
-                'Appoint_Outcome' => null,
-                'Appoint_Start_Date' => null,
-                'Appoint_Start_Day' => null,
-                'Appoint_Start_Time' => null,
-                'Appointment_Location' => null,
-                'Appointment_Type' => null,
-                'Assess_Date' => null,
-                'Assess_Location' => null,
-                'Assess_Outcome' => null,
-                'Assess_Type' => null,
-                'Campus' => null,
-                'Course' => null,
-                'Course_Area_2' => null,
-                'Course_Level_2' => null,
-                'Date_Of_Birth_2' => null,
-                'Datedecisioncomplete' => null,
-                'Decision' => null,
-                'Enquiry_Date' => null,
-                'Enquiry_Status' => null,
-                'Firstname' => null,
-                'Gender' => null,
-                'Lastname' => null,
-                'Main_Address' => null,
-                'Main_Postcode' => null,
-                'Marketing' => null,
-                'Nationality' => null,
-                'Phone' => null,
-                'Postcode' => null,
-                'Pref_Course_Area' => null,
-                'Pref_Course_Level' => null,
-                'Pref_Course_Location' => null,
-                'Pref_Entry_Date' => null,
-                'Reply_Status' => null,
-                'Salutation' => null,
-                'Sf_Accountid' => null,
-                'Sf_Leadid' => null,
-                'Source' => null,
-                'Unite_Student_Ref' => null,
-                'Year_Of_Entry' => null
-        };
-
-    }
-
-
-    public static void postRandomContact(){
-
-
-        Http http = new Http();
-        HttpRequest request = new HttpRequest();
-//        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/739166/contacts');
-        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/853530/contacts');
-        request.setMethod('POST');
-//
-//        String credentials = 'apiuser-0454fcda797c@apiconnector.com:4984gfFk';
-        String credentials = 'apiuser-8d9f284f212e@apiconnector.com:4984gfFk';
-
-        request.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(credentials)) );
-
-        request.setHeader('Accept', 'application/json');
-        request.setHeader('Content-Type', 'application/json;charset=UTF-8');
-        request.setBody('{"email":"dddjohn.smith@emailsim.io"}');
-//request.setBody('"{ ""email"": ""john.smith@emailsim.io"", ""optInType"": ""Single"", ""emailType"": ""Html"", ""dataFields"": [ { key: ""FIRSTNAME"", value: ""John"" }, { key: ""FULLNAME"", value: ""John Smith"" }, { key: ""GENDER"", value: ""Male"" }, { key: ""LASTNAME"", value: ""Smith"" }, { key: ""POSTCODE"", value: ""N5 1DP"" } ] }"');
-
-        HttpResponse response = http.send(request);
-// If the request is successful, parse the JSON response.
-
-        system.debug(response.getStatusCode() + ' ' + response.getBody());
-
-        if (response.getStatusCode() == 200) {
-
-        }
-
-    }
-
-
-    public static void postRandomContactBulk(){
-
-        Http http = new Http();
-        HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/853530/contacts/import');
-        request.setMethod('POST');
-        String credentials = 'apiuser-8d9f284f212e@apiconnector.com:4984gfFk';
-        request.setHeader('Authorization', 'Basic ' + EncodingUtil.Base64Encode(Blob.valueOf(credentials)) );
-        request.setHeader('Content-Type', 'multipart/form-data; boundary=xxx');
-//        request.setHeader('Content-Type', 'multipart/form-data;');
-//        request.setHeader('Content-Type', 'application/xml;');
-        request.setHeader('Content-Length', '1');
-        String body = '-----------------------------153501500631101;\r\n';
-        body += 'Content-Disposition = attachment; Name="fileData"; FileName="FileName.csv";\r\n';
-        body += 'Content-Type = "text/csv";\r\n';
-//        body += 'Email \r\n';
-        body += 'xxx\r\n';
-
-//        String body = '-----------------------------153501500631101;\n';
-//        body += 'Content-Type: "text/csv";Content-Disposition: form-data; name="Filedata"; filename="Test.csv";\n';
-//        body += 'Content-Type: "text/csv";\n';
-//        body += 'Email \r\n';
-//        body += '-----------------------------153501500631102--\n';
-
-        request.setBody(body.escapeEcmaScript().replaceAll('\\\r\\\n|\\\r|\\\n', '<br />'));
-
-        system.debug(body.escapeEcmaScript().replaceAll('\\\r\\\n|\\\r|\\\n', '<br />'));
-//        request.setBodyAsBlob(Blob.valueOf(body));
-        //request.setBody('"{ ""email"": ""john.smith@emailsim.io"", ""optInType"": ""Single"", ""emailType"": ""Html"", ""dataFields"": [ { key: ""FIRSTNAME"", value: ""John"" }, { key: ""FULLNAME"", value: ""John Smith"" }, { key: ""GENDER"", value: ""Male"" }, { key: ""LASTNAME"", value: ""Smith"" }, { key: ""POSTCODE"", value: ""N5 1DP"" } ] }"');
-
-        HttpResponse response = http.send(request);
-        System.debug(response.getStatusCode() + ' ' + response.getBody());
-
-
-
-    }
-
-    public static void BankAccountCSVFile_HTTPCallout(){
-
-        String file_name = 'mav3rik12.csv';
-//        Set<Id> setBillingAccountIds = new set<Id>();
-//        setBillingAccountIds.add('RecordId');
-        String file_body = 'dhjkjdhjkhkldfjshkljhdfskjh';
-
-        String boundary = '----------------------------741e90d31eff';
-
-        String header = '--'+boundary+'\nContent-Disposition: form-data; name="sourceFile"; filename="FileName";\nContent-Type: text/csv';
-        String footer = '--'+boundary+'--';
-        String headerEncoded = EncodingUtil.base64Encode(Blob.valueOf(header+'\r\n\r\n'));
-
-        while(headerEncoded.endsWith('=')) {
-            header+=' ';
-            headerEncoded = EncodingUtil.base64Encode(Blob.valueOf(header+'\r\n\r\n'));
-        }
-        String bodyEncoded = EncodingUtil.base64Encode(blob.valueOf(file_body));
-
-        Blob bodyBlob = null;
-        String last4Bytes = bodyEncoded.substring(bodyEncoded.length()-4,bodyEncoded.length());
-
-        if(last4Bytes.endsWith('==')) {
-            last4Bytes = last4Bytes.substring(0,2) + '0K';
-            bodyEncoded = bodyEncoded.substring(0,bodyEncoded.length()-4) + last4Bytes;
-            String footerEncoded = EncodingUtil.base64Encode(Blob.valueOf(footer));
-            bodyBlob = EncodingUtil.base64Decode(headerEncoded+bodyEncoded+footerEncoded);
-        } else if(last4Bytes.endsWith('=')) {
-            last4Bytes = last4Bytes.substring(0,3) + 'N';
-            bodyEncoded = bodyEncoded.substring(0,bodyEncoded.length()-4) + last4Bytes;
-            footer = '\n' + footer;
-            String footerEncoded = EncodingUtil.base64Encode(Blob.valueOf(footer));
-            bodyBlob = EncodingUtil.base64Decode(headerEncoded+bodyEncoded+footerEncoded);
-        } else {
-            footer = '\r\n' + footer;
-            String footerEncoded = EncodingUtil.base64Encode(Blob.valueOf(footer));
-            bodyBlob = EncodingUtil.base64Decode(headerEncoded+bodyEncoded+footerEncoded);
-        }
-
-//        HttpRequest req = new HttpRequest();
-//        req.setHeader('Content-Type','multipart/form-data; boundary='+boundary);
-//        req.setMethod('POST');
-//        req.setEndpoint(sENDPOINT);
-//        req.setHeader('authKey', 'XXXXXXXXXXXXXX');
-//        req.setBodyAsBlob(bodyBlob);
-//        req.setTimeout(120000);
-//
-//        Http http = new Http();
-//        HTTPResponse res = http.send(req);
-
-        Http http = new Http();
-        HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/739166/contacts/import');
-        request.setMethod('POST');
-        String credentials = 'apiuser-0454fcda797c@apiconnector.com:4984gfFk';
-        request.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(credentials)) );
-        request.setHeader('Content-Type','multipart/form-data; boundary='+boundary);
-        request.setHeader('Content-Length',String.valueOf(bodyBlob));
-        request.setBodyAsBlob(bodyBlob);
-        HttpResponse response = http.send(request);
-        System.debug(response.getStatusCode() + ' ' + response.getBody());
-    }
-
-
-    public static void attempt3(){
-
-
-// change the following variables according to your use-case
-        String fileName = 'MY_FILE.txt';
-        String fileContent = 'Hello World';
-        String separationString = 'A_RANDOM_STRING';
-
-// assemble the body payload
-        String header = '--' + separationString + '\nContent-Disposition: form-data; name="file"; filename="' + fileName + '"\nContent-Type: application/octet-stream\n\n';
-        String body = EncodingUtil.base64Encode(Blob.valueOf(fileContent)) + '\n';
-//        String body = fileContent + '\n';
-        String footer = '--' + separationString + '--';
-        String bodyPayload = header + body + footer;
-
-// send out the request
-        HttpRequest req = new HttpRequest();
-        String credentials = 'apiuser-0454fcda797c@apiconnector.com:4984gfFk';
-        req.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(credentials)) );
-        req.setHeader('Content-Type', 'multipart/form-data; boundary=' + separationString);
-        req.setHeader('Content-Length', String.valueOf(bodyPayload.length()));
-        req.setMethod('POST');
-        req.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/739166/contacts/import');
-        req.setBody(bodyPayload);
-
-        Http http = new Http();
-        HttpResponse response = http.send(req);
-
-        System.debug(response.getStatusCode() + ' ' + response.getBody());
-
-
-
-
+        request.setBody('{' +
+                '"email":"' + opp.Email2__c + '",' +
+                '"optInType":"Single",' +
+                '"emailType":"Html",' +
+                '"dataFields":[' +
+                '   { key: "APP_STATUS", value: "' + opp.Application_Status__c + '" },' +
+                '   { key: "APPOINT_OUTCOME", value: "' + opp.Application_Outcome__c + '" },' +
+                '   { key: "FIRSTNAME", value: "' + opp.Account.FirstName + '" },' +
+                '   { key: "LASTNAME", value: "' + opp.Account.LastName + '" },' +
+                '   { key: "FULLNAME", value: "' + opp.Account.Name + '" },' +
+                '   { key: "POSTCODE", value: "' + opp.Account.ShippingPostalCode + '" },' +
+                '   { key: "PHONE", value: "' + opp.Account.Phone + '" },' +
+                '   { key: "SALUTATION", value: "' + opp.Account.Salutation + '" },' +
+                '   { key: "REPLY_STATUS", value: "' + opp.Reply_Status__c + '" },' +
+                '   { key: "APPOINT_OUTCOME", value: "' + opp.Application_Outcome__c + '" },' +
+                '   { key: "APPOINTMENT_TYPE", value : "' + opp.Booking_Type__c + '"},' +
+                '   { key: "ASSESS_DATE", value : "' + opp.Application_Date__c + '"},' +
+                '   { key: "ASSESS_LOCATION", value : "' + opp.Application_Location__c + '"}' +
+                '   { key: "DATE_OF_BIRTH_2", value : "' + opp.Account.Date_of_Birth__c + '"},' +
+                '   { key: "MAIN_ADDRESS", value : "' + opp.Account.PersonMailingAddress + '"},' +
+                '   { key: "PREF_COURSE_AREA", value : "' + opp.Course_Area__c + '"},' +
+                '   { key: "PREF_COURSE_LEVEL", value : "' + opp.Level_of_Course__c + '"},' +
+                '   { key: "SF_ACCOUNTID", value : "' + opp.AccountId + '"},' +
+                '   { key: "UNITE_STUDENT_REF", value : "' + opp.Account.UnitE_Student_Ref__c + '"}' +
+                '           ]' +
+                '}'
+        );
+
+        return request;
     }
 
 }
