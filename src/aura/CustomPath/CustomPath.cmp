@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+     <table>
+            <tr>
+                <td width="100%" height="100%;" align="center">
+                    <img id="Path" src="https://bimm--developer--c.cs105.content.force.com/servlet/servlet.FileDownload?file=0151w000000DRMV">
+    </img>
+                </td>
+         </tr>
+    </table>
+</aura:component>
