@@ -37,6 +37,10 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="DotDigitalConfigController" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="DotMailerSync" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -269,6 +273,10 @@
                         <list>
                           <MetadataEntry>
                             <option name="name" value="CustomPath" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DotDigitalConfig" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>

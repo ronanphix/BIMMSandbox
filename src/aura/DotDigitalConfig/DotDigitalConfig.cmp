@@ -1,0 +1,53 @@
+<aura:component description="DotDigitalConfig" controller="DotDigitalConfigController"
+    implements="flexipage:availableForAllPageTypes">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="mappings" type="Object[]"/>
+    <aura:attribute name="enquiry" type="Object[]"/>
+    <aura:attribute name="application" type="Object[]"/>
+    <aura:attribute name="booking" type="Object[]"/>
+
+
+    <div class="slds-card slds-p-around--medium">
+        <div class="slds-text-title slds-text-title_bold">DOT DIGITAL FIELD MAPPINGS</div>
+
+        <div class="slds-grid slds-table_bordered slds-text-title_bold slds-gutters_direct-medium">
+            <div class="slds-col slds-size--1-of-4">DotDigital</div>
+            <div class="slds-col slds-size--1-of-4">Enquiry</div>
+            <div class="slds-col slds-size--1-of-4">Application</div>
+            <div class="slds-col slds-size--1-of-4">Booking</div>
+
+        </div>
+        <aura:iteration items="{!v.mappings}" var="mapping">
+            <div class="slds-grid slds-p-top--medium slds-gutters_direct-small">
+                <div class="slds-col slds-size--1-of-4 slds-grid">
+                    <lightning:input type="text" value="{!mapping.Field__c}" variant="label-hidden" disabled="true"/>
+                </div>
+                <div class="slds-col slds-size--1-of-4 slds-grid">
+                    <lightning:input type="checkbox" disabled="{!not(mapping.EnquiryField__c)}"/>
+                    <lightning:combobox aura:id="selectItem" placeholder="Select Enquiry field"
+                                        value="{!mapping.EnquiryField__c}" variant="label-hidden" options="{!v.enquiry}"/>
+                </div>
+                <div class="slds-col slds-size--1-of-4 slds-grid">
+                    <lightning:input type="checkbox"/>
+                    <lightning:combobox aura:id="selectItem" placeholder="Select Enquiry field"
+                                        value="{!mapping.ApplicationField__c}" variant="label-hidden" options="{!v.application}"/>
+                </div>
+                <div class="slds-col slds-size--1-of-4 slds-grid">
+                    <lightning:input type="checkbox"/>
+                    <lightning:combobox aura:id="selectItem" placeholder="Select Enquiry field"
+                                        value="{!mapping.BookingField__c}" variant="label-hidden" options="{!v.booking}"/>
+                </div>
+            </div>
+
+
+
+        </aura:iteration>
+
+
+
+    </div>
+
+
+
+</aura:component>
