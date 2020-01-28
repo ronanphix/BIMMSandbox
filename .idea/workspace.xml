@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eca80f91-6e21-4bb8-8e15-63a886d0c740" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/BIMM_Sandbox/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/BIMM_Sandbox/OfflineSymbolTable.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/DotMailerSync.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DotMailerSync.cls" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/classes/DotMailerSync.cls">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfigController.js">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfig.cmp">
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/DotDigitalConfigController.cls">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/MockHandler.cls">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/triggers/LeadTrigger.trigger">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/triggers/OpportunityTrigger.trigger">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/OpportunityTriggerHandler.cls">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/EmailHandler.cls">
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Apex Trigger" />
+        <option value="Apex Class" />
+        <option value="Lightning Component" />
+        <option value="Apex Metadata" />
+        <option value="Lightning Controller" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/classes/EmailHandler.cls" />
+        <option value="$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls" />
+        <option value="$PROJECT_DIR$/src/triggers/LeadTrigger.trigger" />
+        <option value="$PROJECT_DIR$/src/classes/MockHandler.cls" />
+        <option value="$PROJECT_DIR$/src/triggers/OpportunityTrigger.trigger" />
+        <option value="$PROJECT_DIR$/src/classes/OpportunityTriggerHandler.cls" />
+        <option value="$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfigController.js" />
+        <option value="$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfig.cmp" />
+        <option value="$PROJECT_DIR$/src/classes/DotDigitalConfigController.cls" />
+        <option value="$PROJECT_DIR$/src/classes/DotMailerSync.cls" />
+      </list>
+    </option>
+  </component>
+  <component name="IlluminatedCloudWorkspaceSettings">
+    <option name="moduleWorkspaceSettings">
+      <map>
+        <entry key="BIMM Sandbox">
+          <value>
+            <ModuleWorkspaceSettings>
+              <option name="moduleContentsLastModified" value="1579076087836" />
+            </ModuleWorkspaceSettings>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectWorkspaceSettings">
+      <ProjectWorkspaceSettings>
+        <option name="anonymousApexSettings">
+          <AnonymousApexSettings>
+            <option name="apexLogLevel" value="FINEST" />
+            <option name="calloutsLogLevel" value="ERROR" />
+            <option name="documentText" value="&#10;system.debug(JSON.serialize('{label:&quot;hjg&quot;,value:&quot;xcc&quot;}'));&#10;&#10;//List&lt;Opportunity&gt; l = [select id,Email2__c,DotDigitalId__c from Opportunity where Email2__c != null and DotDigitalId__c = null limit 5];&#10;//&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[2].Id});&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[3].Id});&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[2].Id});&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[3].Id});&#10;&#10;&#10;//List&lt;Lead&gt; l = [select id from Lead where DotDigitalId__c = null limit 5];&#10;//DotMailerSync.postLeads(new Set&lt;Id&gt;{l[0].Id});&#10;//DotMailerSync.postLeads(new Set&lt;Id&gt;{l[1].Id});&#10;&#10;&#10;//delete [select id from lead where CreatedDate = TODAY];&#10;//&#10;//List&lt;Lead&gt; ls = new List&lt;Lead&gt;();&#10;//&#10;//&#10;//for (Integer x = 0; x &lt; 2; x++){&#10;//&#10;//    Decimal r = Math.random();&#10;//    String s = String.valueOf(x + r).substring(0,5);&#10;//&#10;//    Lead l =  new Lead(&#10;////            FirstName = 'Batch100' + s,&#10;////            LastName = 'Batch100' + S,&#10;////            Email = 'Batch100' + s + '@' +  s + '.com'&#10;//            FirstName = 'Batch1001',&#10;//            LastName = 'Batch1001',&#10;//            Email = 'Batch1001@i.com'&#10;//    );&#10;//&#10;//    ls.add(l);&#10;//}&#10;//&#10;//insert ls;&#10;&#10;//&#10;//&#10;//&#10;//&#10;//HttpRequest req     = DotMailerSync.buildRequest(lead);&#10;//HttpResponse res    = new Http().send(req);&#10;//&#10;//res.getStatusCode();&#10;//&#10;//&#10;//DotMailerSync.postRandomContact2();&#10;" />
+            <option name="nbaLogLevel" value="ERROR" />
+            <option name="profilingLogLevel" value="ERROR" />
+            <option name="splitterProportion" value="0.38777718" />
+            <option name="systemLogLevel" value="FINEST" />
+            <option name="validationLogLevel" value="ERROR" />
+            <option name="visualforceLogLevel" value="FINE" />
+            <option name="waveLogLevel" value="ERROR" />
+            <option name="workflowLogLevel" value="ERROR" />
+          </AnonymousApexSettings>
+        </option>
+        <option name="connectionWorkspaceSettings">
+          <map>
+            <entry key="BIMM Sandbox">
+              <value>
+                <ConnectionWorkspaceSettings>
+                  <option name="buildSuccessDatesBySourceRootRelativePath">
+                    <map>
+                      <entry key="APEXCLASS:DOTDIGITALCONFIGCONTROLLER" value="1579081369126" />
+                      <entry key="APEXCLASS:DOTMAILERSYNC" value="1578069083520" />
+                      <entry key="APEXCLASS:EMAILHANDLER" value="1578059162000" />
+                      <entry key="APEXCLASS:LEADTRIGGERHANDLER" value="1578062667582" />
+                      <entry key="APEXCLASS:MOCKHANDLER" value="1578063555718" />
+                      <entry key="APEXCLASS:OPPORTUNITYTRIGGERHANDLER" value="1578066662757" />
+                      <entry key="APEXTRIGGER:LEADTRIGGER" value="1578062667759" />
+                      <entry key="APEXTRIGGER:OPPORTUNITYTRIGGER" value="1578064234164" />
+                      <entry key="AURADEFINITIONBUNDLE:DOTDIGITALCONFIG" value="1579081312000" />
+                    </map>
+                  </option>
+                </ConnectionWorkspaceSettings>
+              </value>
+            </entry>
+          </map>
+        </option>
+      </ProjectWorkspaceSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="796" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aura" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aura" type="462c0819:PsiDirectoryNode" />
+              <item name="DotDigitalConfig" type="edc2aaaf:IlluminatedCloudProjectTreeStructureProvider$BundleDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="triggers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eca80f91-6e21-4bb8-8e15-63a886d0c740" name="Default Changelist" comment="" />
+      <created>1571390278786</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571390278786</updated>
+      <workItem from="1571390282864" duration="63000" />
+      <workItem from="1571390347608" duration="6982000" />
+      <workItem from="1571911646383" duration="4424000" />
+      <workItem from="1572069499331" duration="539000" />
+      <workItem from="1572150440081" duration="249000" />
+      <workItem from="1572351930517" duration="6346000" />
+      <workItem from="1576590943795" duration="1344000" />
+      <workItem from="1577093012048" duration="962000" />
+      <workItem from="1577971111618" duration="20268000" />
+      <workItem from="1578486341994" duration="357000" />
+      <workItem from="1578497147563" duration="7887000" />
+      <workItem from="1579269720329" duration="653000" />
+    </task>
+    <task id="LOCAL-00001" summary="3.1.2020">
+      <created>1578052127878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578052127878</updated>
+    </task>
+    <task id="LOCAL-00002" summary="3.1.2020 2">
+      <created>1578069107931</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578069107931</updated>
+    </task>
+    <task id="LOCAL-00003" summary="13.1.2020">
+      <created>1578923098152</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578923098153</updated>
+    </task>
+    <task id="LOCAL-00004" summary="15.1.2020">
+      <created>1579081447383</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579081447383</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="50074000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="796" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.28898427" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32970297" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.07868383" side_tool="true" weight="0.8084337" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Anonymous Apex" order="11" sideWeight="0.92131615" weight="0.56534094" />
+      <window_info anchor="bottom" id="Log Analyzer" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="SOQL Query" order="15" />
+      <window_info anchor="bottom" id="Illuminated Cloud" order="16" weight="0.32954547" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="3.1.2020" />
+    <MESSAGE value="3.1.2020 2" />
+    <MESSAGE value="13.1.2020" />
+    <MESSAGE value="15.1.2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="15.1.2020" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfigController.js">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfig.cmp">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/MockHandler.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/triggers/LeadTrigger.trigger">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/triggers/OpportunityTrigger.trigger">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/OpportunityTriggerHandler.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/EmailHandler.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/DotDigitalConfigController.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/DotMailerSync.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>

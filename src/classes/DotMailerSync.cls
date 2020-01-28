@@ -74,7 +74,7 @@ public class DotMailerSync {
     public static HttpRequest buildRequest(Lead lead){
 
         HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/853530/contacts');
+        request.setEndpoint('https://r1-api.dotmailer.com/v2/address-books/' + Label.Dot + '/contacts');
         request.setMethod('POST');
         request.setHeader('Authorization', 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(Label.DotDigitalAPIUser)) );
         request.setHeader('Accept', 'application/json');
