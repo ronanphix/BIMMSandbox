@@ -16,13 +16,30 @@
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 
-trigger LeadTrigger on Lead (after insert, after update) {
+trigger LeadTrigger on Lead (before insert, before update, after insert, after update) {
 
-    if (Trigger.isAfter && Trigger.isInsert){
-        LeadTriggerHandler.handleAfterInsert();
+
+    if (Trigger.isBefore){
+
+        LeadTriggerHandler.handleBeforeInsert(Trigger.new);
+
+
     }
 
-    if (Trigger.isAfter && Trigger.isUpdate){
-        LeadTriggerHandler.handleAfterUpdate();
+
+
+
+
+
+    // todo: revise this logic to work in loop
+    if (Trigger.isAfter){
+        if (Trigger.isInsert){
+            LeadTriggerHandler.handleAfterInsert(Trigger.new);
+        }
+
+        if (Trigger.isUpdate){
+            LeadTriggerHandler.handleAfterUpdate(Trigger.new, Trigger.oldMap);
+        }
     }
+
 }

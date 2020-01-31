@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eca80f91-6e21-4bb8-8e15-63a886d0c740" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/BIMM_Sandbox/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/BIMM_Sandbox/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/DotMailerSync.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DotMailerSync.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aura/TestComponent/TestComponent.cmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aura/TestComponent/TestComponent.cmp-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BIMM Sandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BIMM Sandbox.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/triggers/LeadTrigger.trigger" beforeDir="false" afterPath="$PROJECT_DIR$/src/triggers/LeadTrigger.trigger" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,24 +21,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/classes/DotMailerSync.cls">
-          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfigController.js">
-          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfig.cmp">
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -55,10 +53,16 @@
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls">
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/aura/TestComponent/TestComponent.cmp">
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -86,9 +90,9 @@
       <list>
         <option value="Apex Trigger" />
         <option value="Apex Class" />
+        <option value="Lightning Controller" />
         <option value="Lightning Component" />
         <option value="Apex Metadata" />
-        <option value="Lightning Controller" />
       </list>
     </option>
   </component>
@@ -99,8 +103,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/classes/EmailHandler.cls" />
-        <option value="$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls" />
-        <option value="$PROJECT_DIR$/src/triggers/LeadTrigger.trigger" />
         <option value="$PROJECT_DIR$/src/classes/MockHandler.cls" />
         <option value="$PROJECT_DIR$/src/triggers/OpportunityTrigger.trigger" />
         <option value="$PROJECT_DIR$/src/classes/OpportunityTriggerHandler.cls" />
@@ -108,6 +110,9 @@
         <option value="$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfig.cmp" />
         <option value="$PROJECT_DIR$/src/classes/DotDigitalConfigController.cls" />
         <option value="$PROJECT_DIR$/src/classes/DotMailerSync.cls" />
+        <option value="$PROJECT_DIR$/src/aura/TestComponent/TestComponent.cmp" />
+        <option value="$PROJECT_DIR$/src/triggers/LeadTrigger.trigger" />
+        <option value="$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls" />
       </list>
     </option>
   </component>
@@ -117,7 +122,7 @@
         <entry key="BIMM Sandbox">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1579076087836" />
+              <option name="moduleContentsLastModified" value="1580226829370" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -129,7 +134,7 @@
           <AnonymousApexSettings>
             <option name="apexLogLevel" value="FINEST" />
             <option name="calloutsLogLevel" value="ERROR" />
-            <option name="documentText" value="&#10;system.debug(JSON.serialize('{label:&quot;hjg&quot;,value:&quot;xcc&quot;}'));&#10;&#10;//List&lt;Opportunity&gt; l = [select id,Email2__c,DotDigitalId__c from Opportunity where Email2__c != null and DotDigitalId__c = null limit 5];&#10;//&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[2].Id});&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[3].Id});&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[2].Id});&#10;//DotMailerSync.postOpportunities(new Set&lt;Id&gt;{l[3].Id});&#10;&#10;&#10;//List&lt;Lead&gt; l = [select id from Lead where DotDigitalId__c = null limit 5];&#10;//DotMailerSync.postLeads(new Set&lt;Id&gt;{l[0].Id});&#10;//DotMailerSync.postLeads(new Set&lt;Id&gt;{l[1].Id});&#10;&#10;&#10;//delete [select id from lead where CreatedDate = TODAY];&#10;//&#10;//List&lt;Lead&gt; ls = new List&lt;Lead&gt;();&#10;//&#10;//&#10;//for (Integer x = 0; x &lt; 2; x++){&#10;//&#10;//    Decimal r = Math.random();&#10;//    String s = String.valueOf(x + r).substring(0,5);&#10;//&#10;//    Lead l =  new Lead(&#10;////            FirstName = 'Batch100' + s,&#10;////            LastName = 'Batch100' + S,&#10;////            Email = 'Batch100' + s + '@' +  s + '.com'&#10;//            FirstName = 'Batch1001',&#10;//            LastName = 'Batch1001',&#10;//            Email = 'Batch1001@i.com'&#10;//    );&#10;//&#10;//    ls.add(l);&#10;//}&#10;//&#10;//insert ls;&#10;&#10;//&#10;//&#10;//&#10;//&#10;//HttpRequest req     = DotMailerSync.buildRequest(lead);&#10;//HttpResponse res    = new Http().send(req);&#10;//&#10;//res.getStatusCode();&#10;//&#10;//&#10;//DotMailerSync.postRandomContact2();&#10;" />
+            <option name="documentText" value="insert new Lead(&#10;        Title = 'Mr',&#10;        FirstName = 'testing',&#10;        LastName = 'dupe',&#10;        Email = 'testing@dupe.com'&#10;);&#10;&#10;&#10;" />
             <option name="nbaLogLevel" value="ERROR" />
             <option name="profilingLogLevel" value="ERROR" />
             <option name="splitterProportion" value="0.38777718" />
@@ -150,18 +155,24 @@
                       <entry key="APEXCLASS:DOTDIGITALCONFIGCONTROLLER" value="1579081369126" />
                       <entry key="APEXCLASS:DOTMAILERSYNC" value="1578069083520" />
                       <entry key="APEXCLASS:EMAILHANDLER" value="1578059162000" />
-                      <entry key="APEXCLASS:LEADTRIGGERHANDLER" value="1578062667582" />
+                      <entry key="APEXCLASS:LEADTRIGGERHANDLER" value="1580393058243" />
                       <entry key="APEXCLASS:MOCKHANDLER" value="1578063555718" />
                       <entry key="APEXCLASS:OPPORTUNITYTRIGGERHANDLER" value="1578066662757" />
-                      <entry key="APEXTRIGGER:LEADTRIGGER" value="1578062667759" />
+                      <entry key="APEXTRIGGER:LEADTRIGGER" value="1580385939199" />
                       <entry key="APEXTRIGGER:OPPORTUNITYTRIGGER" value="1578064234164" />
                       <entry key="AURADEFINITIONBUNDLE:DOTDIGITALCONFIG" value="1579081312000" />
+                      <entry key="AURADEFINITIONBUNDLE:TESTCOMPONENT" value="1580385854000" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
               </value>
             </entry>
           </map>
+        </option>
+        <option name="soqlQuerySettings">
+          <SoqlQuerySettings>
+            <option name="documentText" value="SELECT&#10;        Account__c,&#10;        Account_Primary_Opp_Status__c,&#10;        Address,&#10;        Address_1__c,&#10;        Address_2__c,&#10;        Age__c,&#10;        Age_at_Next_Intake__c,&#10;        Alert_Message__c,&#10;        Alert_U18__c,&#10;        AnnualRevenue,&#10;        Appointment_Location__c,&#10;        Appointment_Start__c,&#10;        Appointment_Status_c__c,&#10;        Appointment_Type__c,&#10;        Campus__c,&#10;        City,&#10;        City__c,&#10;        Company,&#10;        Contact_Outcome__c,&#10;        ConvertedAccountId,&#10;        ConvertedContactId,&#10;        ConvertedDate,&#10;        ConvertedOpportunityId,&#10;        Country,&#10;        Country_of_Birth__c,&#10;        Country_of_Domicile__c,&#10;        Course__c,&#10;        Course_Area__c,&#10;        CreatedById,&#10;        CreatedDate,&#10;        CurrencyIsoCode,&#10;        Current_Intake_Date__c,&#10;        Date_of_Birth__c,&#10;        Date_Time_Applied__c,&#10;        Date_Time_Assessment_ATT_DNA__c,&#10;        Date_Time_Assessment_Booked__c,&#10;        Date_Time_Assigned__c,&#10;        Date_Time_Contacted_1__c,&#10;        Date_Time_Contacted_2__c,&#10;        Date_Time_Contacted_3__c,&#10;        Date_Time_Open_Day_ATTDNA__c,&#10;        Date_Time_Open_Day_Booked__c,&#10;        Date_Time_Outcome_Apply__c,&#10;        Date_Time_Tour_ATT_DNA__c,&#10;        Date_Time_Tour_Booked__c,&#10;        Date_Time_Unqualified__c,&#10;        DB_Created_Date_without_Time__c,&#10;        DB_Lead_Age__c,&#10;        ddm__EngagementScore__c,&#10;        ddm__LatestScoreEvaluation__c,&#10;        ddm__OptInType__c,&#10;        ddm__OverallScore__c,&#10;        ddm__ScoreLabel__c,&#10;        ddm__SuitabilityScore__c,&#10;        Description,&#10;        Disability_Notes__c,&#10;        DoNotCall,&#10;        DotDigitalId__c,&#10;        Email,&#10;        EmailBouncedDate,&#10;        EmailBouncedReason,&#10;        Engagement_Level__c,&#10;        Enquiry_Date__c,&#10;        Enquiry_Type__c,&#10;        Enrolment_Status__c,&#10;        Entry_Date__c,&#10;        Fax,&#10;        FE_or_HE__c,&#10;        Finance_Notes__c,&#10;        FirstName,&#10;        Force_Update_Date__c,&#10;        GeocodeAccuracy,&#10;        HasOptedOutOfEmail,&#10;        HasOptedOutOfFax,&#10;        Hours_Since_Apply__c,&#10;        Hours_Since_Enquiry__c,&#10;        Hours_Since_Last_Contacted__c,&#10;        Hours_Since_Last_Engagement__c,&#10;        Id,&#10;        IndividualId,&#10;        Industry,&#10;        IsConverted,&#10;        IsDeleted,&#10;        IsUnreadByOwner,&#10;        Jigsaw,&#10;        JigsawContactId,&#10;        Last_Contacted_Date_Time__c,&#10;        Last_Engagement_DateTime__c,&#10;        LastActivityDate,&#10;        LastModifiedById,&#10;        LastModifiedDate,&#10;        LastName,&#10;        LastReferencedDate,&#10;        LastTransferDate,&#10;        LastViewedDate,&#10;        Latitude,&#10;        Lead_CaseSafe_Id__c,&#10;        Lead_Score__c,&#10;        LeadSource,&#10;        Level_of_Course__c,&#10;        Longitude,&#10;        MailChimp_Id__c,&#10;        MailChimp_Last_Update_Date__c,&#10;        MailChimp_List_Id__c,&#10;        MailChimp_Rating__c,&#10;        MailChimp_Status__c,&#10;        Main_Address__c,&#10;        MasterRecordId,&#10;        MobilePhone,&#10;        Name,&#10;        Nationality__c,&#10;        Newsletter__c,&#10;        No_of_Guests__c,&#10;        NumberOfEmployees,&#10;        Open_Day_Date__c,&#10;        Other_Email__c,&#10;        Other_Email_Type__c,&#10;        OwnerId,&#10;        Phone,&#10;        Phone_Preference__c,&#10;        Photo_Preference__c,&#10;        PhotoUrl,&#10;        Point_of_Entry__c,&#10;        Post_Preference__c,&#10;        PostalCode,&#10;        PostCode__c,&#10;        Preferred_Location__c,&#10;        Priority__c,&#10;        Rating,&#10;        Record_Type_Name__c,&#10;        RecordTypeId,&#10;        Requested_Open_Day__c,&#10;        Salutation,&#10;        Score_Comparison__c,&#10;        Send_to_MailChimp__c,&#10;        Send_to_MailChimp_Override__c,&#10;        SMS_Preference__c,&#10;        State,&#10;        Status,&#10;        Street,&#10;        Student_Notes__c,&#10;        Sub_status__c,&#10;        SystemModstamp,&#10;        Term_Time_Address__c,&#10;        Term_Time_Post_Code__c,&#10;        Title,&#10;        UCAS_CAO_Ref__c,&#10;        Unit_E_Enquiry_Ref_FX__c,&#10;        UnitE_Application_Ref__c,&#10;        UnitE_Application_Ref_FX__c,&#10;        UnitE_Enquiry_Ref__c,&#10;        UnitE_Student_Ref__c,&#10;        UnitE_Student_Ref_FX__c,&#10;        UnitE_Student_Reference__c,&#10;        UnitEDate__c,&#10;        UTM_Campaign__c,&#10;        UTM_Medium__c,&#10;        UTM_Source__c,&#10;        Website,&#10;        Workflow_Email_Sent_Date__c,&#10;        Year_of_Entry__c&#10;FROM Lead" />
+          </SoqlQuerySettings>
         </option>
       </ProjectWorkspaceSettings>
     </option>
@@ -209,6 +220,13 @@
               <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aura" type="462c0819:PsiDirectoryNode" />
+              <item name="TestComponent" type="edc2aaaf:IlluminatedCloudProjectTreeStructureProvider$BundleDirectoryNode" />
+            </path>
+            <path>
+              <item name="BIMM Sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BIMM Sandbox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -225,8 +243,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -278,6 +296,7 @@
       <workItem from="1578486341994" duration="357000" />
       <workItem from="1578497147563" duration="7887000" />
       <workItem from="1579269720329" duration="653000" />
+      <workItem from="1580205803287" duration="4903000" />
     </task>
     <task id="LOCAL-00001" summary="3.1.2020">
       <created>1578052127878</created>
@@ -311,13 +330,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50074000" />
+    <option name="totallyTimeSpent" value="54977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="796" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28898427" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28898427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -331,15 +350,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32970297" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32954547" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.07868383" side_tool="true" weight="0.8084337" />
       <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info anchor="bottom" id="Anonymous Apex" order="11" sideWeight="0.92131615" weight="0.56534094" />
+      <window_info active="true" anchor="bottom" id="Anonymous Apex" order="11" sideWeight="0.92131615" visible="true" weight="0.56534094" />
       <window_info anchor="bottom" id="Log Analyzer" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="SOQL Query" order="15" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32954547" />
+      <window_info anchor="bottom" id="SOQL Query" order="15" weight="0.7244318" />
       <window_info anchor="bottom" id="Illuminated Cloud" order="16" weight="0.32954547" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -363,41 +382,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="15.1.2020" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfigController.js">
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+    <entry file="file://$PROJECT_DIR$/src/classes/DotMailerSync.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfigController.js">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/DotDigitalConfig/DotDigitalConfig.cmp">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/MockHandler.cls">
+    <entry file="file://$PROJECT_DIR$/src/classes/DotDigitalConfigController.cls">
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/triggers/LeadTrigger.trigger">
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls">
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/triggers/OpportunityTrigger.trigger">
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
@@ -411,26 +414,22 @@
     <entry file="file://$PROJECT_DIR$/src/classes/EmailHandler.cls">
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/DotDigitalConfigController.cls">
+    <entry file="file://$PROJECT_DIR$/src/classes/MockHandler.cls">
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/DotMailerSync.cls">
+    <entry file="file://$PROJECT_DIR$/src/aura/TestComponent/TestComponent.cmp">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/triggers/LeadTrigger.trigger">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/LeadTriggerHandler.cls">
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider editor-type-id="text-editor" />

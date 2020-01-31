@@ -1,0 +1,8 @@
+<aura:component description="TestComponent" implements="flexipage:availableForAllPageTypes">
+
+    <lightning:layout>
+        <div>SOME CUSTOM CONTENT WE DISCUSSED</div>
+
+    </lightning:layout>
+
+</aura:component>
