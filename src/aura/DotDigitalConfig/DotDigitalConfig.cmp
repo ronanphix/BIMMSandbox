@@ -9,6 +9,21 @@
 
 
     <div class="slds-card slds-p-around--medium">
+
+        <div>
+            <img src="{!$Resource.DotDigital}" style="height: 50px;"/>
+        </div>
+
+
+        <div class="slds-p-vertical--medium">
+            <div class="slds-p-around--medium slds-text-title_bold">ACCOUNT FIELDS</div>
+
+        </div>
+
+    </div>
+
+
+    <div class="slds-card slds-p-around--medium">
         <div class="slds-text-title slds-text-title_bold">DOT DIGITAL FIELD MAPPINGS</div>
 
         <div class="slds-grid slds-table_bordered slds-text-title_bold slds-gutters_direct-medium">
